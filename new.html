@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+ <link rel="shortcut icon" type="image/png" href="/img/msb.svg"
+"> <link rel="shortcut icon" type="image/png" href="/img/msb.svg"
+ <link rel="shortcut icon" type="image/png" href="/img/msb.svg"
+"><head>
+     <style>
+body {
+  font-size: 12px;
+  background: #fff !important;
+  border-style: none;
+  font-family: helvetica, arial, sans-serif;
+}
+.sound {
+  border-style: outset;
+  width: 100px;
+  height: 170px;
+}
+.download {
+  cursor: pointer
+}
+.name {
+  text-align: center;
+  font-size: 15px;
+}
+#instants_container {
+  margin: 30px auto 0;
+  text-align: center;
+  border-style: none;
+}
+.instant {
+  position: relative;
+  vertical-align: top;
+  width: 94px;
+  border-style: none;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+  word-wrap: break-word;
+}
+.small-button {
+  width: 94px;
+  height: 89px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 3px;
+  margin-top: 0px;
+  border-style: none;
+  position: absolute;
+  background: url(img/button.png) no-repeat;
+  cursor: pointer
+}
+.small-button:active {
+  background: url(img/button-pressed.png) no-repeat;
+  cursor: progress
+}
+.small-button-background {
+  width: 86px;
+  height: 84px;
+  margin-top: 3px;
+  margin-left: 6px;
+  position: absolute;
+}
+.small-button-shadow {
+  width: 94px;
+  height: 89px;
+  margin-bottom: 5px;
+  background: url(img/button-shadow.png) no-repeat;
+}
+.circle {
+  border-radius: 50%;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+.flex-container > div {
+  padding: 5px;
+}
+div.control {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  padding: 3px;
+  border: 3px solid #000;
+  background: #ffffff;
+}
+.woah {
+  cursor: pointer
+}
+  </style>
+  <title>Soundboard </title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta content="https://3kh0.github.io/soundboard" property="og:url" />
+   <meta content="/img/msb.svg" property="og:image" />
+   <meta content="#00FF00" data-react-helmet="true" name="theme-color" />
+   <meta name="title" content="Soundboard">
+   <meta name="description" content="Perfect for school! Just play it when your teacher is talking and I bet they will love it!">
+   <meta name="keywords" content="trolls, fun, tags, soundboard, sound, annoying">
+   <meta name="robots" content="index, follow">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <meta name="language" content="English">
+   <meta name="revisit-after" content="1 days">
+   <meta name="author" content="Thomas Bryan">
+ </head>
+  <body>
+    <h1> New Sounds</h1>
+    <h2>Just click on the buttons to play the sound and annoy anyone!</h2>
+   <h3>Click the Download button to download the sound.</h3>
+            <a href="/request/" class="notIn">Request a sound</a>  
+               <a href="/hidden/" class="notIn">Admin mode </a>  
+
+
+
+<script>
+ // functions for audio control menu
+function playAll() {
+  document.getElementById('fart').play()
+  document.getElementById('fart-with-reverb').play()
+  document.getElementById('sloppy-fart').play()
+  document.getElementById('bruh').play()
+  document.getElementById('WinError').play()
+  document.getElementById('nope').play()
+  document.getElementById('bonk').play()
+  document.getElementById('yeet').play()
+  document.getElementById('taco-bell').play()
+  document.getElementById('nut').play()
+  document.getElementById('bazinga').play()
+  document.getElementById('DUN_DUN').play()
+  document.getElementById('what-the-dog-doin').play()
+  document.getElementById('discord-notification').play()
+  document.getElementById('android-notif').play()
+  document.getElementById('sheep').play()
+  document.getElementById('hello-there').play()
+  document.getElementById('oof').play()
+  document.getElementById('rick-roll').play()
+  document.getElementById('trololo').play()
+  document.getElementById('turtles').play()
+  document.getElementById('bababooey').play()
+  document.getElementById('nice').play()
+  document.getElementById('bye-have-a-great-time').play()
+  document.getElementById('inception').play()
+  document.getElementById('sicko').play()
+  document.getElementById('vine-boom').play()
+  document.getElementById('anime-wow').play()
+  document.getElementById('yummy').play()
+  document.getElementById('deez-nutz').play()
+  document.getElementById('lebron-james').play()
+  document.getElementById('woody-woodpecker-laugh').play()
+  document.getElementById('earape-base').play()
+  document.getElementById('nomnomnomnom').play()
+  document.getElementById('spongebob-dolphin').play()
+  document.getElementById('fn-default-bb').play()
+  document.getElementById('five-nights-at-freddys-full-scream').play()
+  document.getElementById('gta5-wasted').play()
+  document.getElementById('morgan-smell').play()
+  document.getElementById('john-cena-intro').play()
+  document.getElementById('dababy-lets-go').play()
+  document.getElementById('gas-gas-gas').play()
+  document.getElementById('ohno-table-broken').play()
+  document.getElementById('full-table-broken').play()
+  document.getElementById('airhorn').play()
+}
+function stopAll() {
+  document.getElementById('fart').load()
+  document.getElementById('fart-with-reverb').load()
+  document.getElementById('sloppy-fart').load()
+  document.getElementById('bruh').load()
+  document.getElementById('WinError').load()
+  document.getElementById('nope').load()
+  document.getElementById('bonk').load()
+  document.getElementById('yeet').load()
+  document.getElementById('taco-bell').load()
+  document.getElementById('nut').load()
+  document.getElementById('bazinga').load()
+  document.getElementById('DUN_DUN').load()
+  document.getElementById('what-the-dog-doin').load()
+  document.getElementById('discord-notification').load()
+  document.getElementById('android-notif').load()
+  document.getElementById('sheep').load()
+  document.getElementById('hello-there').load()
+  document.getElementById('oof').load()
+  document.getElementById('rick-roll').load()
+  document.getElementById('trololo').load()
+  document.getElementById('turtles').load()
+  document.getElementById('bababooey').load()
+  document.getElementById('nice').load()
+  document.getElementById('bye-have-a-great-time').load()
+  document.getElementById('inception').load()
+  document.getElementById('sicko').load()
+  document.getElementById('vine-boom').load()
+  document.getElementById('anime-wow').load()
+  document.getElementById('yummy').load()
+  document.getElementById('deez-nutz').load()
+  document.getElementById('lebron-james').load()
+  document.getElementById('woody-woodpecker-laugh').load()
+  document.getElementById('earape-base').load()
+  document.getElementById('nomnomnomnom').load()
+  document.getElementById('spongebob-dolphin').load()
+  document.getElementById('fn-default-bb').load()
+  document.getElementById('five-nights-at-freddys-full-scream').load()
+  document.getElementById('gta5-wasted').load()
+  document.getElementById('morgan-smell').load()
+  document.getElementById('john-cena-intro').load()
+  document.getElementById('dababy-lets-go').load()
+  document.getElementById('gas-gas-gas').load()
+  document.getElementById('ohno-table-broken').load()
+  document.getElementById('full-table-broken').load()
+  document.getElementById('airhorn').load()
+}
+</script>
+   
+<div class="flex-container">
+ <div>
+  <div class="sound">
+   <div class="circle small-button-background" style="background-color:#00B9DA;"></div>
+    <audio id="Goofy ahh bell" src="sounds/goofy-ahh-cowbell.mp3" preload="auto"></audio>
+     <button class="small-button" onclick="document.getElementById('SOUND').play();"></button>
+      <div class="small-button-shadow"></div>
+      <p class="name"><button onclick="window.location.href='sounds/SOUND.mp3'">Download</button><br>
+       SOUND<br>
+       </p>
+  </div>
+ </div>
+<center>
+ </div>
+
+<!-- TEMPLATE TO ADD MORE SOUNDS
+
+ <div>
+  <div class="sound">
+   <div class="circle small-button-background" style="background-color:#COLOR;"></div>
+    <audio id="SOUND" src="sounds/SOUND.mp3" preload="auto"></audio>
+     <button class="small-button" onclick="document.getElementById('SOUND').play();"></button>
+      <div class="small-button-shadow"></div>
+      <p class="name"><button onclick="window.location.href='sounds/SOUND.mp3'">Download</button><br>
+       SOUND<br>
+       </p>
+  </div>
+ </div>
+<center>
+   <img src="/img/msb.svg" width="250" height="400">
+<br> Thomas Bryan © 2021-2022</br>
+</center>
+-->
+</div>
+ </body>
+</html>
