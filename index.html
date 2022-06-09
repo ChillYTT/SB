@@ -1,90 +1,128 @@
 <!DOCTYPE html>
 <html>
-<link rel="shortcut icon" type="" href="/img/msb.svg"
-"> <link rel="shortcut icon" type="image/png" href="/img/msb.svg"
-<link rel="shortcut icon" type="image/png" href="/img/msb.svg"><head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-                                                              
-    <style>
-  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+ <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Extinction_Symbol.svg/1200px-Extinction_Symbol.svg.png"
+"> <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Extinction_Symbol.svg/1200px-Extinction_Symbol.svg.png"
+ <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Extinction_Symbol.svg/1200px-Extinction_Symbol.svg.png"
+"><head>
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+     <style>
+       @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-html,body{
-  display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
-  background: #f2f2f2;
-}
-.wrapper{
-  height: 60px;
-  width: 55vw;
-  background: #fff;
-  line-height: 60px;
-  border-radius: 50px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-}
-.wrapper nav{
-  position: relative;
-  display: flex;
-}
-.wrapper nav label{
-  flex: 1;
-  width: 100%;
-  z-index: 1;
-  cursor: pointer;
-}
-.wrapper nav label a{
-  position: relative;
-  z-index: -1;
-  color: #1d1f20;
-  font-size: 20px;
-  font-weight: 500;
   text-decoration: none;
-  transition: color 0.6s ease;
 }
-.wrapper nav #home:checked ~ label.home a,
-.wrapper nav #inbox:checked ~ label.inbox a,
-.wrapper nav #contact:checked ~ label.contact a,
-.wrapper nav #heart:checked ~ label.heart a,
-.wrapper nav #about:checked ~ label.about a{
-  color: #fff;
-}
-.wrapper nav label a i{
-  font-size: 25px;
-  margin: 0 7px;
-}
-.wrapper nav .tab{
-  position: absolute;
+.sidebar{
+  position: fixed;
+  width: 240px;
+  left: -240px;
   height: 100%;
-  width: 20%;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
-  border-radius: 50px;
-  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
-  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background: #1e1e1e;
+  transition: all .5s ease;
 }
-.wrapper nav #inbox:checked ~ .tab{
-  left: 20%;
+.sidebar header{
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #1b1b1b;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
 }
-.wrapper nav #contact:checked ~ .tab{
-  left: 40%;
+.sidebar a{
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
 }
-.wrapper nav #heart:checked ~ .tab{
-  left: 60%;
+a.active,a:hover{
+  border-left: 5px solid #b93632;
+  color: #b93632;
 }
-.wrapper nav #about:checked ~ .tab{
-  left: 80%;
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 16px;
 }
-.wrapper nav input{
+.sidebar a span{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#check{
   display: none;
 }
-                                                              
+label #btn,label #cancel{
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #262626;
+  margin: 15px 30px;
+  font-size: 29px;
+  background: #262626;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+}
+label #cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
 body {
   font-size: 12px;
   background: #fff !important;
@@ -188,22 +226,6 @@ div.control {
    <meta name="author" content="3kh0">
  </head>
   <body>
-                                      <div class="wrapper">
-         <nav>
-            <input type="radio" name="tab" id="home" checked>
-            <input type="radio" name="tab" id="inbox">
-            <input type="radio" name="tab" id="contact">
-            <input type="radio" name="tab" id="heart">
-            <input type="radio" name="tab" id="about">
-            <label for="home" class="home"><a href="#"><i class="fas fa-home"></i>Home</a></label>
-            <label for="inbox" class="inbox"><a href="#"><i class="far fa-comment"></i>Inbox</a></label>
-            <label for="contact" class="contact"><a href="#"><i class="far fa-envelope"></i>Contact</a></label>
-            <label for="heart" class="heart"><a href="#"><i class="far fa-heart"></i>Heart</a></label>
-            <label for="about" class="about"><a href="#"><i class="far fa-user"></i>About</a></label>
-            <div class="tab"></div>
-         </nav>
-      </div>
-                            
     <h1>Online Soundboard</h1>
     <h2>Just click on the colorful buttons to play the sound.</h2>
    <h3>Click the Download button to download the sound. All sounds are copyright free!</h3>
